@@ -12,13 +12,13 @@ def test_page_exists():
 def test_sections_present():
     for h in ["Le poste", "Ce que tu feras", "Ce qu'on attend",
               "Ce que tu y gagnes", "L'équipe", "Comment postuler"]:
-        assert h in html, h
+        assert h in html.replace("’", "'"), h
 
 
 def test_key_messages():
     assert "Alexis Lamonnier" in html
     assert "Pas besoin de savoir coder en React" in html
-    assert "rythme" in html and "entretien" in html
+    assert "entretien" in html  # ligne « rythme » retirée par l'équipe le 2026-11-23
     assert "job-dating" in html
 
 
